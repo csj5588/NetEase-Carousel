@@ -1,0 +1,79 @@
+.root{
+  width: 100%;
+  height: 20vw;
+  background-color: #16181C;
+  .slideBox{
+    width: 50%;
+    height: 15vw;
+    margin: 0 auto;
+    position: relative;
+    .slide{
+      position: absolute;
+      transition: all 0.3s ease-in-out;
+      user-select: none;
+      &:hover{
+        cursor: pointer;
+      }
+      img{
+        width: 100%;
+      }
+      .masking{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s 0.2s linear;
+        background: rgba(0, 0, 0, .5);
+      }
+      &.middle{
+        left: 10%;
+        bottom: 0%;
+        width: 80%;
+        z-index: 33;
+        .masking{
+          background: transparent;
+        }
+      }
+      &.start{
+        left: 0%;
+        bottom: 0%;
+        width: 75%;
+        z-index: 22;
+      }
+      &.end{
+        left: 25%;
+        bottom: 0%;
+        width: 75%;
+        z-index: 22;
+      }
+      &.normal{
+        left: 13%;
+        bottom: 0%;
+        width: 74%;
+        z-index: 11;
+      }
+    }
+  }
+  .point{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -23px;
+    z-index: 999;
+    text-align: center;
+    span{
+      display: inline-block;
+      width: 20px;
+      height: 3px;
+      background-color: #2E3033;
+      margin-left: 9px;
+      &.hover{
+        background-color: #7F8082;
+      }
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+}

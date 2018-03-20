@@ -1,0 +1,25 @@
+{
+  "entry": "src/index.js",
+  "publicPath": "./",
+  "env": {
+    "development": {
+      "extraBabelPlugins": [
+        "dva-hmr",
+        "transform-runtime"
+      ]
+    },
+    "production": {
+      "extraBabelPlugins": [
+        "transform-runtime"
+      ]
+    }
+  },
+  "proxy": {
+    "/dev": {
+      // "target": "http://172.16.49.224:61001/",
+      "target": "http://shifond.minishebei.com/",
+      "changeOrigin": true
+      // "pathRewrite": { "^/mini" : "" }
+    }
+  }
+}
