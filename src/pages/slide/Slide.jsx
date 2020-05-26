@@ -23,9 +23,7 @@ class Slide extends React.Component {
       current: '',
     };
   }
-  componentWillMount() {
-    console.log(wx);
-  }
+
   slide(name, key) {  // 图片点击逻辑
     // 记录当前节点
     this.setState({ current: key });
@@ -33,7 +31,7 @@ class Slide extends React.Component {
     this.imgArr(name);
   }
   imgArr(name) { // 数组处理
-    let dirCopy = this.state.dir;
+    const dirCopy = this.state.dir;
     if (name === 'start') {  // 点击左侧那张
       const pop = dirCopy.pop(); // 从数组尾部弹出一个元素
       dirCopy.unshift(pop); // 尾部元素添加到数组头部

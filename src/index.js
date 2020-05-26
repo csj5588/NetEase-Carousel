@@ -13,8 +13,7 @@ const app = dva({
 
 // 3. Model
 app.model(require('./common/publicModel'));
-app.model(require('./pages/qr/QrModel'));
-
+ 
 // 4. Router
 app.router(require('./router'));
 
