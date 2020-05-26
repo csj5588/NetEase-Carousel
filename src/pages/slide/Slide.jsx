@@ -30,6 +30,7 @@ class Slide extends React.Component {
     // 数组操作
     this.imgArr(name);
   }
+
   imgArr(name) { // 数组处理
     const dirCopy = this.state.dir;
     if (name === 'start') {  // 点击左侧那张
@@ -41,6 +42,7 @@ class Slide extends React.Component {
     }
     this.setState({ dir: dirCopy }); // 保存重新排列的数组 并触发render
   }
+
   pointFunc(index) { // 按钮点击
     const { current } = this.state;
     const dirCopy = this.state.dir;
@@ -58,6 +60,7 @@ class Slide extends React.Component {
     this.setState({ dir: dirCopy }); // 触发react-render重新渲染页面
     this.setState({ current: index }); // 记录当前图片节点
   }
+
   render() {
     const { dir } = this.state;
     return (
