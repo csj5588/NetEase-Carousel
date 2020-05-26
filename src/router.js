@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Route, IndexRedirect } from 'dva/router';
 import IndexPage from './pages/IndexPage';
-import Slide from './pages/slide/Slide';
+import Slide from './pages/slide';
 
 
 function RouterConfig({ history }) {

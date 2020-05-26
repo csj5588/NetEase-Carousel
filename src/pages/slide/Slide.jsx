@@ -5,23 +5,36 @@ import styles from './Slide.less';
  * 核心参数有：n>4张图片,响应式,某些样式参数，样式方面并不能开放所有出去，尤其是核心样式
  * 先看清组件的核心算法是什么。算不算按钮导航。
  */
+const Comparison = {
+  0: 'middle',
+  1: 'start',
+};
 
 class Slide extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dir: [
-        { name: 'middle' },
-        { name: 'start' },
-        { name: 'normal' },
-        { name: 'normal' },
-        { name: 'normal' },
-        { name: 'normal' },
-        { name: 'normal' },
-        { name: 'end' },
-      ],
+      dir: this.loopDir(props.images),
       current: '',
     };
+  }
+
+  loopDir(images) {
+    if (images && Array.isArray(images) && images.length < 4) {
+      console.log('请输入至少四张图片');
+      return [];
+    }
+    const _images = [...images];
+    const dirs = _images.map((item, idx) => {
+      let name;
+      if (idx + 1 === _images.length) {
+        name = 'end';
+      } else {
+        name = Comparison[idx] || 'normal';
+      }
+      return { name };
+    });
+    return dirs;
   }
 
   slide(name, key) {  // 图片点击逻辑
@@ -63,19 +76,20 @@ class Slide extends React.Component {
 
   render() {
     const { dir } = this.state;
+    const { images = [] } = this.props;
     return (
       <div className={styles.root}>
         {/* 外部容器*/}
         <div className={styles.slideBox}>
           {/* 内部循环*/}
           {
-            dir.map((item, key) => {
+            dir.map((item, idx) => {
               return (
-                <div key={key} className={`${styles.slide} ${styles[item.name]}`}>
-                  <img src={`./images/${key + 1}.png`} alt="404.png" />
+                <div key={idx} className={`${styles.slide} ${styles[item.name]}`}>
+                  <img src={images[idx]} alt="404.png" />
                   <div
                     className={styles.masking}
-                    onClick={() => this.slide(item.name, key)}
+                    onClick={() => this.slide(item.name, idx)}
                   >{''}</div>
                 </div>
               );
