@@ -1,10 +1,13 @@
-import React from 'react';
-import styles from './Slide.less';
-
 /**
+ * @author cuishijie
+ * @apis images must length > 4 array
  * 核心参数有：n>4张图片,响应式,某些样式参数，样式方面并不能开放所有出去，尤其是核心样式
  * 先看清组件的核心算法是什么。算不算按钮导航。
  */
+
+import React from 'react';
+import styles from './Slide.less';
+
 const Comparison = {
   0: 'middle',
   1: 'start',
