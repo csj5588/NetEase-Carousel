@@ -1,7 +1,15 @@
-## 网易PC音乐播放器轮播
+## 网易客户端音乐轮播图
 
-## 原生react组件开放版本
+### Describe
 
-> yarn
+已react版本模仿，网易客户端音乐轮播图、效果是非常让人兴奋的。
 
-> npm start
+### Install
+
+```
+npm install
+```
+
+```
+npm run start
+```
