@@ -7,7 +7,7 @@
 
 ## 效果预览
 
-![alt](https://img.ikstatic.cn/MTU5NTU3OTQ3ODAwNyM5ODYjanBn.jpg)
+![alt](http://img.ikstatic.cn/MTU5NTU3OTQ3ODAwNyM5ODYjanBn.jpg)
 
 ### Install
 
