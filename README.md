@@ -7,7 +7,7 @@
 
 ## 效果预览
 
-![alt](https://imgchr.com/i/UvAu2q)
+![image][https://imgchr.com/i/UvAu2q]
 
 ### Install
 
